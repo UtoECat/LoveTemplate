@@ -10,10 +10,12 @@ return {
 	version = "0.1",
 	author = "UtoECat",
 	license = "MIT-0",
+	-- debug mode enabled?
+	debug = true,
 	-- Extended info about your game
 	source = "https://github.com/author/repository",
 	website = "https://github.com/author/website",
-	license_file = "license.md",
+	license_file = "license.txt",
 	-- Optional field
 	contributors = {
 		{	name = "UtoECat",

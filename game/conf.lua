@@ -1,5 +1,12 @@
 local info = require "game-info"
 
+-- some setup here
+if info.debug then
+	DEBUG = info.debug
+	_DEBUG = info.debug
+	debug_mode = info.debug
+end
+
 function love.conf(t)
 	----------------------------------------------------------
 	-- CORE SETTINGS
@@ -16,7 +23,7 @@ function love.conf(t)
 	-- Let the window be user-resizable (boolean)
 	t.window.resizable = true
 	-- Filepath to an image to use as the window's icon (string)
-	t.window.icon = info.icon or nil
+	t.window.icon = info.icon_file or nil
 	-- The window width (number)
 	t.window.width = 800
 	-- The window height (number)
