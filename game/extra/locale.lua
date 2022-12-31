@@ -12,7 +12,7 @@ local i18n = {
 local files = love.filesystem.getDirectoryItems("loc")
 
 for _, file in ipairs(files) do
-	if love.filesystem.getInfo(file, "file") and #file < 7 then
+	if love.filesystem.getInfo("/loc/"..file, "file") and #file < 7 then
 		local loc, err = loadfile("/loc/"..file)
 		if loc then
 			local name = file:sub(1, 2) -- for 'en.lua' it will be 'en'
