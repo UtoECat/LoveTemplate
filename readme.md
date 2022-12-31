@@ -3,12 +3,12 @@ LoveTemplate is a simple template and base for your Love games.
 It contains :
 - all love2d settings in place.
 - **localization** and **settings loading/saving** modules.
-- game **build system to zip archive** with compilation to lua bytecode
+- game **build system** (build to bytecode and pack to zip archive) *(bash, zip and luajit utils required)*
 - **offline documentation** for lua and Love2D.
 
 # Repository structure
 
-Root of this repository contains a **build system** described above.  
+Root of this repository contains a **build system** - script file `build.sh`.  
 `game` directory contains your game. Only this directory will be packed to your game archieve
 `doc` directory contains *Love2D* and *Lua 5.4* **offline documenation**.
 
@@ -20,7 +20,7 @@ You can run your game for debugging without compiling and packaging while it is 
  $ love .
 ```
 
-And when the game is ready and/or you want to share it, run `love .` in the root of this repository - the build system will start and the `game.love` file will appear here
+And when the game is *ready* and/or *you want to share it*, run `./build.sh` in the root of this repository - the build system will start and the `game.love` file will appear here *(if no errors happened)*
 
 # Game modules
 ## conf.lua
@@ -57,7 +57,7 @@ Introduses proper `loadfile()` and `dofile()` work when running in zip archive. 
 Introduses a settings table serialization into `<DATADIR>/settings.lua` file and a **safe and sandboxed** loading from it.
 You should specify **default values** in this *module table* before calling `reloadSettings()` global function. There *module* is a table, returned by `require('extra/settings.lua')`.
 All settings will be saved automaticly when game closes!
-# License
+# License for game, extra modules and build system
 
 *The "MIT No Attribution" or "MIT-0" license is a modification to the usual MIT license that removes the requirement for attribution. It is roughly the same as an MIT license consisting of a sandwich of (paragraph, line, paragraph), but it is missing the middle line of the 'sandwich'.*
 

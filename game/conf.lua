@@ -1,11 +1,9 @@
 local info = require "game-info"
 
 -- some setup here
-if info.debug then
-	DEBUG = info.debug
-	_DEBUG = info.debug
-	debug_mode = info.debug
-end
+DEBUG = info.debug
+_DEBUG = info.debug
+debug_mode = info.debug
 
 function love.conf(t)
 	----------------------------------------------------------

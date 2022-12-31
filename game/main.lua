@@ -1,8 +1,15 @@
+-- required modules
 require "extra/locale"
+require "extra/funcs"
 local var = require "extra/settings"
-local font_title = love.graphics.newFont(30) 
-local font_default = love.graphics.newFont(15) 
+local D = love.graphics
 
+-- constants
+local font_title = D.newFont(30) 
+local font_default = D.newFont(15) 
+local license = readfile("license.txt")
+
+-- options 
 var.heloo = "custom option"
 var.number = 100
 
@@ -15,11 +22,13 @@ function love.update(dt)
 end
 
 function love.draw()
-	love.graphics.reset()
-	love.graphics.setFont(font_default)
-	local t = table.concat({love.graphics.getRendererInfo()}, " ")
-	love.graphics.print(t, 0, 0, 0, 1, 1)
-	love.graphics.print(var.heloo, 0, 20, 0, 1, 1)
-	love.graphics.setFont(font_title)
-	love.graphics.print("Just A Test", 0, 50, 0, 1, 1)
+	D.reset()
+	D.setFont(font_default)
+	local t = table.concat({D.getRendererInfo()}, " ")
+	D.print(t, 0, 0, 0, 1, 1)
+	D.print(var.heloo, 0, 20, 0, 1, 1)
+	D.setFont(font_title)
+	D.print("Just A Test", 0, 50, 0, 1, 1)
+	D.setFont(font_default)
+	D.print(license or "?", 0, 90, 0, 1, 1)
 end
